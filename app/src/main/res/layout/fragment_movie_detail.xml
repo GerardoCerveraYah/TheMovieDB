@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="movie"
+            type="com.pruebadacodes.movies.models.MovieDetails" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:id="@+id/loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:layout_centerInParent="true"/>
+        </RelativeLayout>
+        <ScrollView
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_view_default"
+                tools:context=".fragments.MovieDetailFragment">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_movie"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginBottom="@dimen/margin_view_default"
+                        android:clickable="false"
+                        android:elevation="0dp"
+                        android:focusable="false"
+                        app:cardCornerRadius="@dimen/card_corner_radius"
+                        app:cardElevation="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintDimensionRatio="H,4:2"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/image_poster"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:contentDescription="@string/image_content_description" />
+                    </androidx.cardview.widget.CardView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    style="@style/TextTitle"
+                    android:text="@{movie.title}" />
+
+                <TextView
+                    style="@style/TextSubtitle"
+                    android:text="@string/runtime" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        style="@style/TextContent"
+                        android:layout_width="wrap_content"
+                        android:text="@{Integer.toString(movie.runtime)}" />
+                    <TextView
+                        style="@style/TextContent"
+                        android:paddingStart="@dimen/padding_view_small"
+                        android:paddingEnd="@dimen/padding_view_small"
+                        android:text="@string/minutes" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/TextSubtitle"
+                    android:text="@string/release_date" />
+
+                <TextView
+                    style="@style/TextContent"
+                    android:text="@{movie.releaseDate}" />
+
+                <TextView
+                    style="@style/TextSubtitle"
+                    android:text="@string/vote_average" />
+
+                <TextView
+                    style="@style/TextContent"
+                    android:text="@{Double.toString(movie.voteAverage)}" />
+
+                <TextView
+                    style="@style/TextSubtitle"
+                    android:text="@string/genres" />
+
+                <TextView
+                    style="@style/TextContent"
+                    android:text="@{movie.genresList}" />
+
+                <TextView
+                    style="@style/TextSubtitle"
+                    android:text="@string/overview" />
+
+                <TextView
+                    style="@style/TextContent"
+                    android:text="@{movie.overview}" />
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+</layout>

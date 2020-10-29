@@ -1,0 +1,27 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="margin_view_xsmall">2dp</dimen>
+    <dimen name="margin_view_small">5dp</dimen>
+    <dimen name="margin_view_default">8dp</dimen>
+
+    <dimen name="dialog_icon_width">48dp</dimen>
+    <dimen name="dialog_icon_height">48dp</dimen>
+
+    <dimen name="padding_view_default">8dp</dimen>
+    <dimen name="padding_view_small">5dp</dimen>
+    <dimen name="padding_view_large">16dp</dimen>
+
+    <dimen name="text_xsmall">14sp</dimen>
+    <dimen name="text_small">16sp</dimen>
+    <dimen name="text_medium">18sp</dimen>
+    <dimen name="text_large">20sp</dimen>
+
+    <dimen name="card_corner_radius">6dp</dimen>
+    <dimen name="card_corner_elevation">6dp</dimen>
+
+    <dimen name="icon_list_height">18dp</dimen>
+    <dimen name="icon_list_width">18dp</dimen>
+
+    <dimen name="movie_card_height">40dp</dimen>
+</resources>
